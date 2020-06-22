@@ -1,7 +1,4 @@
-<div class="header-service-logo"></div>
-<div class="toolbar" role="banner">
-  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleSidebar()">
-    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-  </button>
+<div class="header-service-logo" [routerLink]="['movies']" style="cursor: pointer; z-index: 1"></div>
+<div class="toolbar" role="banner" style="padding-left: 20px">
   <h3>{{title}}</h3>
 </div>

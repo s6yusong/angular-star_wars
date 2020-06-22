@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { Effect, Actions, ofType } from '@ngrx/effects'
 
 import * as moviesAction from '../actions/movies.action'
-import { MoviesServiceService } from '../../components/movies/services/movies-service.service'
+import { MoviesServiceService } from '../../services/movies-service.service'
 import { map, catchError, switchMap } from "rxjs/operators";
 import { of } from 'rxjs/internal/observable/of';
 

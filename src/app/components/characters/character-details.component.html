@@ -1,4 +1,5 @@
-<mat-spinner *ngIf="!characterDetail" [diameter]=30 [value]=30></mat-spinner>
+<mat-spinner *ngIf="!characterDetail && !errorMsg" style="top:100px; margin:0 auto;"></mat-spinner>
+<app-error-bar [errorMsg]="errorMsg"></app-error-bar>
 <div class="container" *ngIf="characterDetail">
   <div style="padding: 20px; z-index: 1;" class="movie-info">
     <div class="movie-basic-info">
@@ -26,7 +27,7 @@
   <div style="padding: 20px; z-index: 1;" class="character-info">
     <h1>Films</h1>
     <mat-selection-list #films [multiple]="false">
-      <mat-list-option *ngFor="let film of characterDetail.films let i = index" role="listitem">
+      <mat-list-option *ngFor="let film of characterDetail.films let i = index" role="listitem" (click)="item.navigateToDetails()">
         <app-movie-list-item style="color: #ffffff" [(movieUrl)]="characterDetail.films[i]"></app-movie-list-item>
       </mat-list-option>
     </mat-selection-list>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as fromStore from '../../store'
-import { MoviesServiceService } from './services/movies-service.service';
+import { MoviesServiceService } from '../../services/movies-service.service';
 import {MovieDetails} from "../../models/movie-details.model";
 
 
@@ -13,10 +13,13 @@ import {MovieDetails} from "../../models/movie-details.model";
 })
 export class MovieListPageComponent implements OnInit {
   movies$: Observable<MovieDetails[]>;
+  loaded$: Observable<boolean>;
   constructor(private moviesData: MoviesServiceService, private store: Store<fromStore.MoviesState>) { }
 
   ngOnInit(): void {
     this.movies$ = this.store.select(fromStore.getAllMovies);
+    this.loaded$ = this.store.select(fromStore.getAllMoviesLoaded);
+
     this.store.dispatch((new fromStore.LoadMovies([])));
   }
 }

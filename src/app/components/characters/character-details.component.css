@@ -31,3 +31,9 @@ h1{
   background-size: 100%;
   background-image: url('../../../images/1920px-Star_Wars_Logo.svg.png');
 }
+mat-list-option:hover{
+  box-shadow: 0px 0px 26px #6e408d;
+}
+mat-list-option{
+  border-bottom: solid 1px #c1c1c152;
+}

@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Interview @Yue Song';
+  title: string = '@Yue Song';
   sideBarOpened: boolean = false;
   @Output() onToggleNav: EventEmitter<any> = new EventEmitter<boolean>();
   toggleSidebar() {

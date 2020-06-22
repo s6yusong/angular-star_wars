@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
-import { CharacterServiceService } from './character-service.service'
+import { CharacterServiceService } from '../../services/character-service.service'
+import {MovieListItemComponent} from "../movies/movie-list-item.component";
 
 @Component({
   selector: 'app-character-details',
@@ -11,7 +12,10 @@ import { CharacterServiceService } from './character-service.service'
 export class CharacterDetailsComponent implements OnInit {
 
   constructor(private characterData: CharacterServiceService, private activatedRoute: ActivatedRoute) { }
-  characterDetail;
+  @ViewChild(MovieListItemComponent)
+  private item: MovieListItemComponent;
+  characterDetail: Object;
+  errorMsg: string;
   ngOnInit(): void {
     if (Object.keys(window.history.state).length > 1) {
       this.characterDetail = window.history.state;
@@ -19,6 +23,9 @@ export class CharacterDetailsComponent implements OnInit {
       const id = this.activatedRoute.snapshot.paramMap.get('id');
       this.characterData.getCharacter(id).subscribe((resonpse) => {
         this.characterDetail = resonpse;
+      },  (errorRes) => {
+        const { error } = errorRes;
+        this.errorMsg = error.detail;
       })
     }
   }

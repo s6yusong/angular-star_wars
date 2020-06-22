@@ -20,6 +20,7 @@ import { InfoBoxComponent } from './components/movies/info-box.component';
 import { CharacterCardComponent } from './components/characters/character-card.component';
 import { reducers, effects } from './store';
 import { EffectsModule } from '@ngrx/effects';
+import { ErrorBarComponent } from './components/error-bar/error-bar.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { EffectsModule } from '@ngrx/effects';
     CharacterDetailsComponent,
     MovieListItemComponent,
     InfoBoxComponent,
-    CharacterCardComponent
+    CharacterCardComponent,
+    ErrorBarComponent
   ],
   imports: [
     BrowserModule,

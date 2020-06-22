@@ -7,7 +7,7 @@ export interface MovieState {
   loading: boolean;
 };
 
-export  const initState: MovieState = {
+export const initState: MovieState = {
   data: [],
   loaded: false,
   loading: false

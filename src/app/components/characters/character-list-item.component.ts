@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
-import { CharacterServiceService } from './character-service.service'
+import { CharacterServiceService } from '../../services/character-service.service'
 @Component({
   selector: 'app-character-list-item',
   templateUrl: './character-list-item.component.html',

@@ -1,3 +1,5 @@
+<app-error-bar [errorMsg]="errorMsg"></app-error-bar>
+<mat-spinner *ngIf="!movieDetails && !errorMsg" style="top:100px; margin:0 auto;"></mat-spinner>
 <div class="container" *ngIf="movieDetails">
   <div style="padding: 20px; z-index: 1;" class="movie-info">
     <div class="movie-basic-info">

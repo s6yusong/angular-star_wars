@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
-import { CharacterServiceService } from '../../services/character-service.service'
+import * as Service from '../../services';
 import {MovieListItemComponent} from "../movies/movie-list-item.component";
 
 @Component({
@@ -11,10 +11,10 @@ import {MovieListItemComponent} from "../movies/movie-list-item.component";
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor(private characterData: CharacterServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private characterData: Service.CharacterServiceService, private activatedRoute: ActivatedRoute) { }
   @ViewChild(MovieListItemComponent)
-  private item: MovieListItemComponent;
-  characterDetail: Object;
+  public item: MovieListItemComponent;
+  characterDetail: any;
   errorMsg: string;
   ngOnInit(): void {
     if (Object.keys(window.history.state).length > 1) {

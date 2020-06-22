@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { MoviesServiceService } from "../../services/movies-service.service";
+import * as Service from '../../services';
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ export class MovieListItemComponent implements OnInit {
 
   @Input() movieUrl;
   movie;
-  constructor(private movieData: MoviesServiceService, private router: Router) { }
+  constructor(private movieData: Service.MoviesServiceService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.getMovieId();

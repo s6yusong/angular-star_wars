@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CharacterServiceService} from "../../services/character-service.service";
+import * as Service from '../../services';
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class CharacterCardComponent implements OnInit {
   @Input() characterUrl;
   character;
-  constructor(private characterData: CharacterServiceService, private router: Router) { }
+  constructor(private characterData: Service.CharacterServiceService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.getCharacterIds();

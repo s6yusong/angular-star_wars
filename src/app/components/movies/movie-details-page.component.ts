@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { MoviesServiceService } from '../../services/movies-service.service'
+import * as Service from '../../services';
 
 @Component({
   selector: 'app-movie-details-page',
@@ -9,7 +9,7 @@ import { MoviesServiceService } from '../../services/movies-service.service'
 })
 export class MovieDetailsPageComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private moviesData: MoviesServiceService) { }
+  constructor(private route: ActivatedRoute, private moviesData: Service.MoviesServiceService) { }
   movieDetails;
   characterIds: [];
   errorMsg: string;

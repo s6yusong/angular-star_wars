@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from "@angular/router";
-import { CharacterServiceService } from '../../services/character-service.service'
+import * as Service from '../../services';
 @Component({
   selector: 'app-character-list-item',
   templateUrl: './character-list-item.component.html',
@@ -9,7 +9,7 @@ import { CharacterServiceService } from '../../services/character-service.servic
 export class CharacterListItemComponent implements OnInit {
   @Input() characterUrl;
   character;
-  constructor(private characterData: CharacterServiceService, private router: Router) { }
+  constructor(private characterData: Service.CharacterServiceService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.getCharacterIds();

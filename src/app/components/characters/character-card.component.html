@@ -1,0 +1,13 @@
+<div class="card border-dark mb-3" style="width: 10rem; height: 10rem">
+  <mat-spinner *ngIf="!character" [diameter]=30 [value]=30 style="top:40px; margin:0 auto;"></mat-spinner>
+  <div *ngIf="character" (click)="navigateToDetails()" style="cursor: pointer">
+    <div class="card-header">
+    <span *ngIf="character" style="color: #ffffff">
+    {{character.name}}
+  </span>
+    </div>
+    <div class="card-body text-dark">
+      <div class="avatar"></div>
+    </div>
+  </div>
+</div>

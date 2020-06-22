@@ -1,0 +1,6 @@
+<div>
+  <mat-spinner *ngIf="!character" [diameter]=30 [value]=30></mat-spinner>
+  <span *ngIf="character" (click)="navigateToDetails()" style="color: #ffffff">
+    {{character.name}}
+  </span>
+</div>

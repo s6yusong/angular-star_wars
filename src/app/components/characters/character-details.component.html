@@ -1,0 +1,35 @@
+<mat-spinner *ngIf="!characterDetail" [diameter]=30 [value]=30></mat-spinner>
+<div class="container" *ngIf="characterDetail">
+  <div style="padding: 20px; z-index: 1;" class="movie-info">
+    <div class="movie-basic-info">
+      <div class="movie-text-info">
+        <h1>{{characterDetail.name}}</h1>
+        <div style="display: flex;justify-content: space-between; padding: 0 16px;">
+          <div style="display: flex;">
+            <div>
+              <h3>Height: {{characterDetail.height}}</h3>
+              <h3>Mass: {{characterDetail.mass}}</h3>
+              <h3>Hair Color: {{characterDetail.hair_color}}</h3>
+              <h3>Skin Color: {{characterDetail.skin_color}}</h3>
+            </div>
+            <div style="padding-left: 100px;">
+              <h3>Eye Color: {{characterDetail.eye_color}}</h3>
+              <h3>Birth Year: {{characterDetail.birth_year}}</h3>
+              <h3>Gender: {{characterDetail.gender}}</h3>
+            </div>
+          </div>
+          <div class="avatar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px; z-index: 1;" class="character-info">
+    <h1>Films</h1>
+    <mat-selection-list #films [multiple]="false">
+      <mat-list-option *ngFor="let film of characterDetail.films let i = index" role="listitem">
+        <app-movie-list-item style="color: #ffffff" [(movieUrl)]="characterDetail.films[i]"></app-movie-list-item>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+</div>
+

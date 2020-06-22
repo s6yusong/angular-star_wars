@@ -1,0 +1,86 @@
+#target{
+  position:absolute;
+  top:-80px;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  font-size:30px;
+  text-align:center;
+  font-family:sans-serif;
+  line-height: 40px;
+  transform-origin:50% 100%;
+  transform:perspective(300px) rotateX(30deg);
+}
+#target>div{
+  padding-top:450px;
+  animation:autoscroll 100s linear;
+  color:yellow;
+}
+
+@keyframes autoscroll{
+  to{
+    margin-top:-5000px;
+  }
+}
+.container{
+  color: #ffffff;
+}
+.poster{
+  width: 152px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.a-new-hope{
+  background-image: url('../../../images/star-wars-a-new-hope-one-sheet-i28733.jpg');
+}
+.the-empire-strikes-back{
+  background-image: url('../../../images/71bRcNQXbkL._AC_SY741_.jpg');
+}
+.return-of-the-jedi{
+  background-image: url('../../../images/512x-5tuQLL._AC_.jpg');
+}
+.the-phantom-menace{
+  background-image: url('../../../images/81Faw0Fs5-L._AC_SL1200_.jpg');
+}
+.attack-of-the-clones{
+  background-image: url('../../../images/715aZ-gZP1L._AC_SL1200_.jpg');
+}
+.revenge-of-the-sith{
+  background-image: url('../../../images/71MKj4j-isL._SL1200_.jpg');
+}
+.movie-info{
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+  background-color: #000;
+  opacity: 0.85;
+}
+.movie-basic-info{
+  display: flex;
+  height: 270px;
+}
+.movie-text-info{
+  margin: 0 12px 12px 12px;
+  color: #ffffff;
+  width: calc(100% - 175px);
+}
+.character-info{
+  background-color: #000;
+  opacity: 0.85;
+  margin-top: 11px;
+}
+h1{
+  font-family: monospace;
+  border-bottom: yellow 1px solid;
+}
+
+.crawl_container {
+  position: absolute;
+  top: 70px;
+  width: 400px;
+  height: 200px;
+  right: 100px;
+}

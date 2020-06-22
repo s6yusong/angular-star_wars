@@ -1,0 +1,29 @@
+<div class="container" *ngIf="movieDetails">
+  <div style="padding: 20px; z-index: 1;" class="movie-info">
+    <div class="movie-basic-info">
+      <div class="poster" [ngClass]="getPosterClass(movieDetails.title)"></div>
+      <div class="movie-text-info">
+        <h1>{{movieDetails.title}}</h1>
+        <h3>Director:  {{movieDetails.director}}</h3>
+        <h3>Producer:  {{movieDetails.producer}}</h3>
+        <h3>Release Data:  {{movieDetails.release_date}}</h3>
+        <div class="crawl_container">
+          <div id="target" *ngIf="movieDetails">
+            <div>
+              {{movieDetails.opening_crawl}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px; z-index: 1;" class="character-info" >
+    <h1>Characters</h1>
+    <div style="display: flex; flex-wrap: wrap;">
+      <app-character-card *ngFor="let character of movieDetails.characters let i = index"  [(characterUrl)]="movieDetails.characters[i]"></app-character-card>
+    </div>
+  </div>
+</div>
+
+
+

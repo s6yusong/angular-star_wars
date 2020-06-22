@@ -1,0 +1,11 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <mat-nav-list>
+      <a mat-list-item [ngClass]="getSelectedClass('vehicles')" [routerLink]="['movies']">Star Wars Movies</a>
+      <a mat-list-item [ngClass]="getSelectedClass('users')" [routerLink]="['characters']">Characters</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

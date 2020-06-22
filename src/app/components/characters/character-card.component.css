@@ -1,0 +1,29 @@
+.avatar{
+  background-image: url('../../../images/v-46-512.png');
+  width: 80px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 85px;
+  margin: auto;
+}
+.card{
+  width: 100%;
+  background: #6e408d;
+  padding: 0 0 6% 0;
+  text-align: center;
+  box-shadow: 0px 0px 26px #6e408d;
+  margin: 4px;
+}
+.card-body {
+  padding: 0;
+}
+.card span{
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Muli", sans-serif;
+}
+.card-header {
+  padding: .75rem .35rem;
+  height: 65px;
+}

@@ -1,0 +1,6 @@
+<div class="container">
+  <mat-spinner *ngIf="!((movies$ | async)?.length)" style="top:100px; margin:0 auto;" mode="indeterminate"></mat-spinner>
+  <span>{{(movies$ | async)}} test</span>
+  <app-movies-table *ngIf="((movies$ | async).length > 0)" [movies]="(movies$ | async)"></app-movies-table>
+</div>
+

@@ -1,0 +1,33 @@
+.movie-info{
+  padding: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+  background-color: #000;
+  opacity: 0.85;
+}
+.movie-basic-info{
+  display: flex;
+  height: 270px;
+}
+.movie-text-info{
+  color: #ffffff;
+  width: 100%;
+}
+h1{
+  font-family: monospace;
+  border-bottom: yellow 1px solid;
+}
+.character-info{
+  color: #ffffff;
+  background-color: #000;
+  opacity: 0.85;
+  margin-top: 11px;
+}
+.avatar{
+  width: 152px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('../../../images/1920px-Star_Wars_Logo.svg.png');
+}

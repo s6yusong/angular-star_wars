@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import * as Service from '../../services';
 
@@ -7,21 +7,25 @@ import * as Service from '../../services';
   templateUrl: './movie-details-page.component.html',
   styleUrls: ['./movie-details-page.component.css']
 })
-export class MovieDetailsPageComponent implements OnInit {
+export class MovieDetailsPageComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute, private moviesData: Service.MoviesServiceService) { }
   movieDetails;
   characterIds: [];
   errorMsg: string;
+  movieSubscribe;
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    this.moviesData.getMovieDetails(id).subscribe((resonpse) => {
+    this.movieSubscribe = this.moviesData.getMovieDetails(id).subscribe((resonpse) => {
       this.movieDetails = resonpse;
       this.characterIds = this.getCharacterIds(this.movieDetails.characters);
     },  (errorRes) => {
       const { error } = errorRes;
       this.errorMsg = error.detail;
     })
+  }
+  ngOnDestroy(): void {
+    this.movieSubscribe.unsubscribe();
   }
 
   getCharacterIds(charactersUrls) {

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import * as Service from '../../services';
 import {Router} from "@angular/router";
 
@@ -7,17 +7,22 @@ import {Router} from "@angular/router";
   templateUrl: './movie-list-item.component.html',
   styleUrls: ['./movie-list-item.component.css']
 })
-export class MovieListItemComponent implements OnInit {
+export class MovieListItemComponent implements OnInit, OnDestroy {
 
   @Input() movieUrl;
   movie;
+  movieSubscribe;
   constructor(private movieData: Service.MoviesServiceService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.getMovieId();
-    this.movieData.getMovieDetails(id).subscribe((resonpse) => {
+    this.movieSubscribe = this.movieData.getMovieDetails(id).subscribe((resonpse) => {
       this.movie = resonpse;
     })
+  }
+
+  ngOnDestroy(): void {
+    this.movieSubscribe.unsubscribe();
   }
 
   getMovieId() {

@@ -26,29 +26,7 @@
 .container{
   color: #ffffff;
 }
-.poster{
-  width: 152px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-.a-new-hope{
-  background-image: url('../../../images/star-wars-a-new-hope-one-sheet-i28733.jpg');
-}
-.the-empire-strikes-back{
-  background-image: url('../../../images/71bRcNQXbkL._AC_SY741_.jpg');
-}
-.return-of-the-jedi{
-  background-image: url('../../../images/512x-5tuQLL._AC_.jpg');
-}
-.the-phantom-menace{
-  background-image: url('../../../images/81Faw0Fs5-L._AC_SL1200_.jpg');
-}
-.attack-of-the-clones{
-  background-image: url('../../../images/715aZ-gZP1L._AC_SL1200_.jpg');
-}
-.revenge-of-the-sith{
-  background-image: url('../../../images/71MKj4j-isL._SL1200_.jpg');
-}
+
 .movie-info{
   padding: 20px;
   z-index: 1;

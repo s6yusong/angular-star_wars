@@ -1,0 +1,21 @@
+<div class="cards-container" *ngIf="movies.length > 0">
+  <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
+    <mat-card-header>
+      <mat-card-title>{{movie.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content style="display: flex; flex-direction: row; justify-content: space-between">
+      <div style="max-width: 190px;">
+        <h4>Director: {{movie.director}}</h4>
+        <h4>Producer: {{movie.producer}}</h4>
+        <h4>Release Date: {{movie.release_date}}</h4>
+      </div>
+      <div class="card-poster" [ngClass]="getPosterClass(movie.title)"></div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/movies/movie-details', i + 1]">
+        Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

@@ -9,7 +9,7 @@ import * as Service from '../../services';
 })
 export class MovieDetailsPageComponent implements OnInit, OnDestroy {
 
-  constructor(private route: ActivatedRoute, private moviesData: Service.MoviesServiceService) { }
+  constructor(private route: ActivatedRoute, private moviesData: Service.MoviesServiceService, private utils: Service.UtilsService) { }
   movieDetails;
   characterIds: [];
   errorMsg: string;
@@ -36,20 +36,7 @@ export class MovieDetailsPageComponent implements OnInit, OnDestroy {
   }
 
   getPosterClass(name) {
-    switch (name) {
-      case  'A New Hope':
-        return 'a-new-hope';
-      case  'The Empire Strikes Back':
-        return 'the-empire-strikes-back';
-      case 'Return of the Jedi':
-        return 'return-of-the-jedi';
-      case 'The Phantom Menace':
-        return 'the-phantom-menace';
-      case 'Attack of the Clones':
-        return 'attack-of-the-clones';
-      default:
-        return 'revenge-of-the-sith';
-    }
+    return this.utils.getPosterClass(name);
   }
 
 }

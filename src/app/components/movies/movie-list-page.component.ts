@@ -13,6 +13,7 @@ import {MovieDetails} from "../../models/movie-details.model";
 export class MovieListPageComponent implements OnInit {
   movies$: Observable<MovieDetails[]>;
   loaded$: Observable<boolean>;
+  viewTable: boolean = true;
   constructor(private store: Store<fromStore.MoviesState>) { }
 
   ngOnInit(): void {
@@ -20,5 +21,9 @@ export class MovieListPageComponent implements OnInit {
     this.loaded$ = this.store.select(fromStore.getAllMoviesLoaded);
 
     this.store.dispatch((new fromStore.LoadMovies([])));
+  }
+
+  toggleView(ifTableView){
+    this.viewTable = ifTableView;
   }
 }

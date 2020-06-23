@@ -27,8 +27,8 @@
   <div style="padding: 20px; z-index: 1;" class="character-info">
     <h1>Films</h1>
     <mat-selection-list #films [multiple]="false">
-      <mat-list-option *ngFor="let film of characterDetail.films let i = index" role="listitem" (click)="item.navigateToDetails()">
-        <app-movie-list-item style="color: #ffffff" [(movieUrl)]="characterDetail.films[i]"></app-movie-list-item>
+      <mat-list-option *ngFor="let filmUrl of characterDetail.films let i = index" role="listitem" (click)="item.navigateToDetails(getMovieId(filmUrl))">
+        <app-movie-list-item style="color: #ffffff" [movieId]="getMovieId(filmUrl)"></app-movie-list-item>
       </mat-list-option>
     </mat-selection-list>
   </div>

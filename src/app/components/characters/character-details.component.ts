@@ -29,6 +29,10 @@ export class CharacterDetailsComponent implements OnInit {
       })
     }
   }
+  getMovieId(url) {
+    const chars = url.split('/');
+    return chars[chars.length - 2];
+  }
   getAvatarClass(name) {
     return this.utilsService.getAvatarClass(name);
   }

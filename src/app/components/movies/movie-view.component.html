@@ -1,0 +1,5 @@
+<app-movies-table *ngIf="viewTable; else tableView" [movies]="movieList"></app-movies-table>
+<ng-template #tableView>
+  <app-movie-card [movies]="movieList"></app-movie-card>
+</ng-template>
+

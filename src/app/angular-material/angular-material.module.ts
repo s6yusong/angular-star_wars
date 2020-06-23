@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 
 const MaterialComponents = [
   CommonModule,
@@ -21,6 +23,8 @@ const MaterialComponents = [
   MatListModule,
   MatTableModule,
   MatProgressSpinnerModule,
+  MatButtonToggleModule,
+  MatCardModule,
 ];
 
 @NgModule({

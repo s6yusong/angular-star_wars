@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MoviesInterface } from './interfaces/movies-interface'
 
@@ -9,14 +9,12 @@ import { MoviesInterface } from './interfaces/movies-interface'
 })
 export class MoviesTableComponent implements OnInit {
   displayedColumns: string[] = ['title', 'director', 'created', 'producer', 'release_date'];
-  movieList: MoviesInterface[];
   dataSource;
 
   @Input() movies;
 
   ngOnInit() {
-    this.movieList = [...this.movies];
-    this.dataSource = new MatTableDataSource<MoviesInterface>(this.movieList);
+    this.dataSource = new MatTableDataSource<MoviesInterface>(this.movies);
   }
 
 }

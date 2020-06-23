@@ -9,14 +9,13 @@ import {Router} from "@angular/router";
 })
 export class MovieListItemComponent implements OnInit, OnDestroy {
 
-  @Input() movieUrl;
+  @Input() movieId;
   movie;
   movieSubscribe;
   constructor(private movieData: Service.MoviesServiceService, private router: Router) { }
 
   ngOnInit(): void {
-    const id = this.getMovieId();
-    this.movieSubscribe = this.movieData.getMovieDetails(id).subscribe((resonpse) => {
+    this.movieSubscribe = this.movieData.getMovieDetails(this.movieId).subscribe((resonpse) => {
       this.movie = resonpse;
     })
   }
@@ -25,13 +24,8 @@ export class MovieListItemComponent implements OnInit, OnDestroy {
     this.movieSubscribe.unsubscribe();
   }
 
-  getMovieId() {
-    const chars = this.movieUrl.split('/');
-    return chars[chars.length - 2];
-  }
-
-  navigateToDetails() {
-    this.router.navigate(['/movies/movie-details', this.getMovieId()], { state: this.movie });
+  navigateToDetails(id) {
+    this.router.navigate(['/movies/movie-details', id], { state: this.movie });
   }
 
 }

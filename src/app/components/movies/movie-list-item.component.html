@@ -1,6 +1,6 @@
 <div>
   <mat-spinner *ngIf="!movie" [diameter]=30 [value]=30></mat-spinner>
-  <span *ngIf="movie" (click)="navigateToDetails()">
+  <span *ngIf="movie" (click)="navigateToDetails(movieId)">
     {{movie.title}}
   </span>
 </div>

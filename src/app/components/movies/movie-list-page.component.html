@@ -1,5 +1,8 @@
 <div class="container">
   <mat-spinner *ngIf="!(loaded$ | async)" style="top:100px; margin:0 auto;" mode="indeterminate"></mat-spinner>
-  <app-movies-table *ngIf="((movies$ | async).length > 0)" [movies]="(movies$ | async)"></app-movies-table>
+  <mat-button-toggle-group *ngIf="((movies$ | async).length > 0)" name="viewModel" [value]="viewTable">
+    <mat-button-toggle [value]="true" (change)="toggleView($event.value)"><mat-icon>view_headline</mat-icon></mat-button-toggle>
+    <mat-button-toggle [value]="false" (change)="toggleView($event.value)"><mat-icon>view_module</mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+  <app-movie-view *ngIf="((movies$ | async).length > 0)" [movies]="(movies$ | async)" [viewTable]="viewTable"></app-movie-view>
 </div>
-

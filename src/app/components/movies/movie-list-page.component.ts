@@ -25,5 +25,6 @@ export class MovieListPageComponent implements OnInit {
 
   toggleView(ifTableView){
     this.viewTable = ifTableView;
+    this.store.dispatch((new fromStore.ToggleView(ifTableView)));
   }
 }

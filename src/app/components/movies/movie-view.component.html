@@ -1,5 +1,6 @@
-<app-movies-table *ngIf="viewTable; else tableView" [movies]="movieList"></app-movies-table>
-<ng-template #tableView>
+<app-movies-table *ngIf="(tableView$ | async); else cardView" [movies]="movieList"></app-movies-table>
+<ng-template #cardView>
   <app-movie-card [movies]="movieList"></app-movie-card>
 </ng-template>
+
 

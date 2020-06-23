@@ -51,6 +51,7 @@ import { MovieViewComponent } from './components/movies/movie-view.component';
     HttpClientModule,
     StoreModule.forRoot({}),
     StoreModule.forFeature('movies', reducers),
+    StoreModule.forFeature('view', reducers),
     EffectsModule.forRoot(effects),
     EffectsModule.forFeature(effects)
   ],

@@ -2,3 +2,105 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.character-avatar {
+  background-size: cover;
+  width: auto !important;
+  overflow: hidden;
+}
+.luke-skywalker-avatar{
+  background: url('./images/luke-skywalker-main_5a38c454_461eebf5.jpeg') no-repeat center center;
+}
+.c-3po{
+  background: url('./images/C-3PO.jpg') no-repeat center center;
+}
+
+.r2-d2{
+  background: url('./images/R2-D2.jpeg') no-repeat center center;
+}
+
+.obi-Wan-Kenobi{
+  background: url('./images/Obi-Wan Kenobi.jpeg') no-repeat center center;
+}
+
+.yoda{
+  background: url('./images/yoda_2726057.jpg') no-repeat center center;
+}
+
+.darth-vader{
+  background: url('./images/darth-vader.jpg') no-repeat center center;
+}
+
+
+.anakin-skywalker{
+  background: url('./images/Profile_-_Anakin_Skywalker.png') no-repeat center center;
+}
+
+.dadme-amidala{
+  background: url('./images/Padmé Amidala.jpg') no-repeat center center;
+}
+
+.mace-windu{
+  background: url('./images/Mace Windu.png') no-repeat center center;
+}
+
+.leia-organa{
+  background: url('./images/leiatop1-650x574.jpg') no-repeat center center;
+}
+
+.chewbacca{
+  background: url('./images/Chewbacca.jpg') no-repeat center center;
+}
+
+.han-solo{
+  background: url('./images/Han-Solo-Imperium-schlaegt-zurueck-Star-Wars-Harrison-Ford-rcm672x0u.jpg') no-repeat center center;
+}
+
+
+.wedge-antilles{
+  background: url('./images/Wedge Antilles.jpg') no-repeat center center;
+}
+.palpatine{
+  background: url('./images/Palpatine.jpg') no-repeat center center;
+}
+
+.qui-gon-jinn{
+  background: url('./images/Qui-Gon Jinn.jpg') no-repeat center center;
+}
+.nute-gunray{
+  background: url('./images/nute-gunray.jpg') no-repeat center center;
+}
+.jabba-desilijic-tiure{
+  background: url('./images/Jabba Desilijic Tiure.jpg') no-repeat center center;
+}
+
+.jar-jar-binks{
+  background: url('./images/jar jar binks.jpg') no-repeat center center;
+}
+
+.finis-valorum{
+  background: url('./images/finis-valorum.jpeg') no-repeat center center;
+}
+.r4-p17{
+  background: url('./images/r4-p17.jpg') no-repeat center center;
+}
+.owen-lars{
+  background: url('./images/owen-lars.jpg') no-repeat center center;
+}
+.wilhuff-tarkin{
+  background: url('./images/wilhuff-tarkin.jpeg') no-repeat center center;
+}
+
+.beru-whitesun-lars{
+  background: url('./images/beru-whitesun-lars.jpg') no-repeat center center;
+}
+
+.aayla-secura{
+  background: url('./images/aayla-secura.jpg') no-repeat center center;
+}
+.ki-adi-mundi{
+  background: url('./images/ki-adi-mundi.jpg') no-repeat center center;
+}
+.kit-fisto{
+  background: url('./images/kit-fisto.jpg') no-repeat center center;
+}

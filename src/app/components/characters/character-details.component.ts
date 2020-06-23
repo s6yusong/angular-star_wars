@@ -11,7 +11,7 @@ import {MovieListItemComponent} from "../movies/movie-list-item.component";
 })
 export class CharacterDetailsComponent implements OnInit {
 
-  constructor(private characterData: Service.CharacterServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private characterData: Service.CharacterServiceService, private activatedRoute: ActivatedRoute, private utilsService: Service.UtilsService) { }
   @ViewChild(MovieListItemComponent)
   public item: MovieListItemComponent;
   characterDetail: any;
@@ -29,5 +29,7 @@ export class CharacterDetailsComponent implements OnInit {
       })
     }
   }
-
+  getAvatarClass(name) {
+    return this.utilsService.getAvatarClass(name);
+  }
 }

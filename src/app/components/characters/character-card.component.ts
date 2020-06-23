@@ -11,7 +11,7 @@ export class CharacterCardComponent implements OnInit, OnDestroy {
   @Input() characterUrl;
   character;
   characterSubscribe;
-  constructor(private characterData: Service.CharacterServiceService, private router: Router) { }
+  constructor(private characterData: Service.CharacterServiceService, private router: Router, private utilsService: Service.UtilsService) { }
 
   ngOnInit(): void {
     const id = this.getCharacterIds();
@@ -31,4 +31,7 @@ export class CharacterCardComponent implements OnInit, OnDestroy {
     this.router.navigate(['/characters/character-details', this.getCharacterIds()], { state: this.character });
   }
 
+  getAvatarClass(name) {
+    return this.utilsService.getAvatarClass(name);
+  }
 }

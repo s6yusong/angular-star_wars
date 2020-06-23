@@ -19,7 +19,7 @@
               <h3>Gender: {{characterDetail.gender}}</h3>
             </div>
           </div>
-          <div class="avatar"></div>
+          <div class="avatar" [ngClass]="getAvatarClass(characterDetail.name) !== 'default-avatar' ? 'character-avatar ' + getAvatarClass(characterDetail.name) : 'default-avatar' "></div>
         </div>
       </div>
     </div>

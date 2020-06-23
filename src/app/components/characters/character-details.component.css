@@ -22,13 +22,20 @@ h1{
 .character-info{
   color: #ffffff;
   background-color: #000;
-  opacity: 0.85;
+  opacity: 0.95;
   margin-top: 11px;
 }
 .avatar{
-  width: 152px;
+  width: 180px !important;
   background-repeat: no-repeat;
   background-size: 100%;
+}
+.character-avatar{
+  box-shadow: 0px 0px 26px #5399e4;
+  background-size: 100% 100%;
+}
+
+.default-avatar{
   background-image: url('../../../images/1920px-Star_Wars_Logo.svg.png');
 }
 mat-list-option:hover{

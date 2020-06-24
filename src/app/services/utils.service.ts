@@ -5,6 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class UtilsService {
   constructor() { }
+  trimAndLowerCase(str) {
+    return str.toLowerCase().split(/\s/).join('')
+  };
+  filterMovieList(list, key) {
+    return list.filter(item => this.trimAndLowerCase(item.title).includes(this.trimAndLowerCase(key)))
+  }
   getPosterClass(name) {
     switch (name) {
       case  'A New Hope':

@@ -18,7 +18,6 @@ export class MovieViewComponent implements OnInit {
   tableView$: Observable<boolean>;
   constructor(private store: Store<fromStore.MoviesState>) { }
   @Input() movies;
-  @Input() viewTable;
 
   ngOnInit() {
     this.tableView$ = this.store.select(fromStore.getViewType);

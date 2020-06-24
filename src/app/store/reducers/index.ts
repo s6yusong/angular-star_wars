@@ -1,15 +1,15 @@
 import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store'
 import * as fromMovies from './movies.reducer'
-import * as fromViewType from './viewType.reducer'
+import * as fromView from './viewType.reducer'
 
 export interface MoviesState {
   movies: fromMovies.MovieState,
-  view: fromViewType.ViewTypeState
+  view: fromView.ViewState
 }
 
 export const reducers: ActionReducerMap<MoviesState> = {
   movies: fromMovies.reducer,
-  view: fromViewType.reducer
+  view: fromView.reducer
 };
 
 // load movie data
@@ -23,4 +23,5 @@ export const getAllMoviesLoaded = createSelector(getMovies, fromMovies.getMovieL
 //change view type
 export const getViewTypeState = createFeatureSelector<MoviesState>('view');
 export const getViewState = createSelector(getViewTypeState, (state: MoviesState) => state.view);
-export const getViewType = createSelector(getViewState, fromViewType.getViewType);
+export const getViewType = createSelector(getViewState, fromView.getViewType);
+export const getSearchKey = createSelector(getViewState, fromView.getSearchKey);

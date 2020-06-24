@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import * as Service from '../../services';
+import * as fromStore from "../../store";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-movie-card',
@@ -8,11 +10,15 @@ import * as Service from '../../services';
 })
 export class MovieCardComponent implements OnInit {
   @Input() movies;
-  constructor(private utilsService: Service.UtilsService) { }
+  fitleredList;
+  constructor(private utilsService: Service.UtilsService, private store: Store<fromStore.MoviesState>) { }
+
   ngOnInit(): void {
+    this.store.select(fromStore.getSearchKey).subscribe(key => {
+      this.fitleredList = this.utilsService.filterMovieList(this.movies, key);
+    });
   }
   getPosterClass(name) {
     return this.utilsService.getPosterClass(name);
   }
-
 }

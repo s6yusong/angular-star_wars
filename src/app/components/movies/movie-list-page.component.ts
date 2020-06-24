@@ -13,18 +13,26 @@ import {MovieDetails} from "../../models/movie-details.model";
 export class MovieListPageComponent implements OnInit {
   movies$: Observable<MovieDetails[]>;
   loaded$: Observable<boolean>;
-  viewTable: boolean = true;
+  tableView$: Observable<boolean>;
+  searchKeyWord: string;
   constructor(private store: Store<fromStore.MoviesState>) { }
 
   ngOnInit(): void {
     this.movies$ = this.store.select(fromStore.getAllMovies);
     this.loaded$ = this.store.select(fromStore.getAllMoviesLoaded);
-
+    this.tableView$ = this.store.select(fromStore.getViewType);
     this.store.dispatch((new fromStore.LoadMovies([])));
+
+    this.store.select(fromStore.getSearchKey).subscribe(data => {
+      this.searchKeyWord = data;
+    });
+  }
+
+  onSaveKeyWord() {
+    this.store.dispatch((new fromStore.ChangeSearchKey(this.searchKeyWord)));
   }
 
   toggleView(ifTableView){
-    this.viewTable = ifTableView;
     this.store.dispatch((new fromStore.ToggleView(ifTableView)));
   }
 }

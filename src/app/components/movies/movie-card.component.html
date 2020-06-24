@@ -1,5 +1,5 @@
-<div class="cards-container" *ngIf="movies.length > 0">
-  <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
+<div class="cards-container" *ngIf="fitleredList.length > 0">
+  <mat-card class="movie-card" *ngFor="let movie of fitleredList; let i = index">
     <mat-card-header>
       <mat-card-title>{{movie.title}}</mat-card-title>
     </mat-card-header>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { MovieViewComponent } from './components/movies/movie-view.component';
     AngularMaterialModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({}),
     StoreModule.forFeature('movies', reducers),
     StoreModule.forFeature('view', reducers),

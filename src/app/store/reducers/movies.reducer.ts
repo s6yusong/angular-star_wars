@@ -1,13 +1,13 @@
 import * as fromMovies from '../actions/movies.action'
 import { MovieDetails } from '../../models/movie-details.model'
 
-export interface MovieState {
+export interface MoviesState {
   data: MovieDetails[];
   loaded: boolean;
   loading: boolean;
 };
 
-export const initState: MovieState = {
+export const initState: MoviesState = {
   data: [],
   loaded: false,
   loading: false
@@ -16,7 +16,7 @@ export const initState: MovieState = {
 export function reducer(
   state = initState,
   action: fromMovies.MoviesAction
-): MovieState {
+): MoviesState {
 
   switch ((action.type)) {
     case fromMovies.LOAD_MOVIES: {
@@ -45,6 +45,6 @@ export function reducer(
   return state;
 }
 
-export const getMovieLoading = (state: MovieState) => state.loading;
-export const getMovieLoaded = (state: MovieState) => state.loaded;
-export const getMovies = (state: MovieState) => state.data;
+export const getMovieLoading = (state: MoviesState) => state.loading;
+export const getMovieLoaded = (state: MoviesState) => state.loaded;
+export const getMovies = (state: MoviesState) => state.data;

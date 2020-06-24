@@ -10,12 +10,12 @@ import {Store} from "@ngrx/store";
 })
 export class MovieCardComponent implements OnInit {
   @Input() movies;
-  fitleredList;
+  filteredList;
   constructor(private utilsService: Service.UtilsService, private store: Store<fromStore.MoviesState>) { }
 
   ngOnInit(): void {
     this.store.select(fromStore.getSearchKey).subscribe(key => {
-      this.fitleredList = this.utilsService.filterMovieList(this.movies, key);
+      this.filteredList = this.utilsService.filterMovieList(this.movies, key);
     });
   }
   getPosterClass(name) {

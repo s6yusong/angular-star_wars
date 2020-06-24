@@ -3,7 +3,7 @@ import * as fromMovies from './movies.reducer'
 import * as fromView from './viewType.reducer'
 
 export interface MoviesState {
-  movies: fromMovies.MovieState,
+  movies: fromMovies.MoviesState,
   view: fromView.ViewState
 }
 

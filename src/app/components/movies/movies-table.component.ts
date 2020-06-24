@@ -18,8 +18,8 @@ export class MoviesTableComponent implements OnInit {
 
   ngOnInit() {
     this.store.select(fromStore.getSearchKey).subscribe(key => {
-      const fitleredList = this.utilsService.filterMovieList(this.movies, key);
-      this.dataSource = new MatTableDataSource<MoviesInterface>(fitleredList);
+      const filteredList = this.utilsService.filterMovieList(this.movies, key);
+      this.dataSource = new MatTableDataSource<MoviesInterface>(filteredList);
     });
   }
 }

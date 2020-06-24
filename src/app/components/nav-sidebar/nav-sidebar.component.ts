@@ -7,7 +7,6 @@ import {Router, NavigationStart} from '@angular/router'
   styleUrls: ['./nav-sidebar.component.css']
 })
 export class NavSidebarComponent implements OnInit {
-  @Input() opened: boolean;
   routeUrl: string;
   constructor(private router: Router) {
     this.router.events.subscribe((val) => {

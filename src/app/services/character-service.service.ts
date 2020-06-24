@@ -8,6 +8,6 @@ export class CharacterServiceService {
   url="https://swapi.dev/api/people";
   constructor(private http:HttpClient) { }
   getCharacter(id) {
-    return this.http.get(`${this.url}/${id}`);
+    return this.http.get<any>(`${this.url}/${id}`);
   }
 }

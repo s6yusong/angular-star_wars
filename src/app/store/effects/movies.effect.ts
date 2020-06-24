@@ -19,7 +19,7 @@ export class MoviesEffect {
     switchMap(([action, state]) => {
       //not fetch query if movie data already loaded
       // @ts-ignore
-      const {data, loaded} = state.movies;
+      const {data, loaded} = state;
       if (!loaded) {
         return this.movieService.getMovies().pipe(
           map(moviesRespose => {

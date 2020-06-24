@@ -5,7 +5,7 @@
       <mat-button-toggle [value]="true" (change)="toggleView($event.value)"><mat-icon>view_headline</mat-icon></mat-button-toggle>
       <mat-button-toggle [value]="false" (change)="toggleView($event.value)"><mat-icon>view_module</mat-icon></mat-button-toggle>
     </mat-button-toggle-group>
-    <input id="movies-search" type="text" class="form-control" placeholder="search by movie name" (change)="onSaveKeyWord()" [(ngModel)]="searchKeyWord" />
+    <input id="movies-search" type="text" class="form-control" placeholder="search by title" (change)="onSaveKeyWord()" [(ngModel)]="searchKeyWord" />
   </div>
 
   <app-movie-view *ngIf="((movies$ | async).length > 0)" [movies]="(movies$ | async)"></app-movie-view>

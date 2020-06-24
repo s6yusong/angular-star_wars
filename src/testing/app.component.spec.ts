@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
+import { AppComponent } from '../app/app.component';
+import { HeaderComponent } from '../app/components/header/header.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +11,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +23,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'starWars'`, () => {
+  it(`should have as title '@Yue Song'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('starWars');
   });
 
-  it('should render title', () => {
+  it('should render title in header', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('starWars app is running!');
+    const headerElement = fixture.debugElement.query(By.css('app-header'));
+    expect(headerElement.nativeElement.querySelector('h3').textContent).toContain('@Yue Song');
   });
 });

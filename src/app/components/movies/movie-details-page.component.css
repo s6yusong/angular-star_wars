@@ -14,13 +14,13 @@
 }
 #target>div{
   padding-top:450px;
-  animation:autoscroll 100s linear;
+  animation:autoscroll 40s linear;
   color:yellow;
 }
 
 @keyframes autoscroll{
   to{
-    margin-top:-5000px;
+    margin-top:-4000px;
   }
 }
 .container{
